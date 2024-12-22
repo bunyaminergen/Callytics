@@ -1,14 +1,14 @@
 <div align="center">
 <img src=".docs/img/CallyticsIcon.png" alt="CallyticsLogo" width="200">
 
-![License](https://img.shields.io/github/license/username/repo)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/username/repo)
-![GitHub Discussions](https://img.shields.io/github/discussions/username/repo)
+![License](https://img.shields.io/github/license/bunyaminergen/Callytics)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/bunyaminergen/Callytics)
+![GitHub Discussions](https://img.shields.io/github/discussions/bunyaminergen/Callytics)
 
-![GitHub Issues](https://img.shields.io/github/issues/bunyaminergen/SES)
-![Dependencies](https://img.shields.io/david/username/repo)
+![GitHub Issues](https://img.shields.io/github/issues/bunyaminergen/Callytics)
+![Dependencies](https://img.shields.io/david/bunyaminergen/Callytics)
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?logo=linkedin)](https://linkedin.com/in/your-profile)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?logo=linkedin)](https://linkedin.com/in/bunyaminergen)
 
 </div>
 
