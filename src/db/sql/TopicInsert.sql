@@ -1,0 +1,2 @@
+INSERT INTO Topic (Name)
+VALUES (?)

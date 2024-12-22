@@ -1,0 +1,8 @@
+# LF
+* text=auto
+
+# Windows CRLF
+*.bat text eol=crlf
+
+# All LF
+*.sh text eol=lf

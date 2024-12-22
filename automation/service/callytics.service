@@ -1,0 +1,19 @@
+[Unit]
+Description=Callytics
+After=network.target
+
+[Service]
+Type=simple
+User=bunyamin
+EnvironmentFile=/home/bunyamin/Callytics/.env
+WorkingDirectory=/home/bunyamin/Callytics
+ExecStart=/bin/bash -c "source /home/bunyamin/anaconda3/etc/profile.d/conda.sh \
+  && conda activate Callytics \
+  && python /home/bunyamin/Callytics/main.py"
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

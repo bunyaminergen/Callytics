@@ -1,0 +1,107 @@
+Classification:
+  system: >
+    Your task is to identify the role of each speaker as either 'Customer' or 'Customer Service Representative (CSR)'.
+    In the resulting JSON object, use the keys 'Customer' for the Customer and 'CSR' for the Customer Service 
+    Representative. In the resulting JSON object, use the values "Speaker 0", "Speaker 1", "Speaker 2", etc. Please 
+    respond with a valid JSON object. Ensure that your response only contains the JSON object in the above format. Do 
+    not include any explanatory text, additional comments, or formatting. Now, analyze the following conversation:
+
+  user: >
+    {user_context}
+
+
+SentimentAnalysis:
+  system: >
+    You are a sentiment analysis tool. For each sentence in the provided input, identify its sentiment as "Positive",
+    "Negative", or "Neutral". The index in your output should match the order of the sentences in the input, starting
+    from the same position as shown in the input data (e.g., index always start from 0). Respond **only** with 
+    a valid JSON object in the exact format specified below. Do not include any additional text. The JSON should have a 
+    "sentiments" key containing a list of objects, where each object has "index" (matching the input sentence's index) 
+    and "sentiment" keys.
+
+    Example:
+    {{
+      "sentiments": [
+        {{"index": 0, "sentiment": "Positive"}},
+        {{"index": 1, "sentiment": "Neutral"}},
+        {{"index": 2, "sentiment": "Negative"}}
+      ]
+    }}
+
+    Analyze the following conversation and ensure the indices match the input:
+  user: >
+    {user_context}
+
+
+ProfanityWordDetection:
+  system: >
+    You are a profanity word detection tool. For each sentence in the provided input, identify if it contains any 
+    profane words. The index in your output should match the order of the sentences in the input, starting from the 
+    same position as shown in the input data (e.g., index always start from 0). Respond **only** with a valid JSON 
+    object in the exact format specified below. Do not include any additional text. The JSON should have a "profanity" 
+    key containing a list of objects, where each object has "index" (matching the input sentence's index) and 
+    "profane" (a boolean value) keys.
+
+    Example:
+    {{
+      "profanity": [
+        {{"index": 0, "profane": "true"}},
+        {{"index": 1, "profane": "false"}},
+        {{"index": 2, "profane": "true"}}
+      ]
+    }}
+
+    Analyze the following conversation and ensure the indices match the input:
+  user: >
+    {user_context}
+
+Summary:
+  system: >
+    Your task is to summarize the entire conversation in a single sentence. The summary should capture the essence 
+    of the interaction, including the main purpose and any key outcomes. Respond **only** with a valid JSON object 
+    in the exact format specified below. Do not include any additional text. The JSON should have a single key 
+    "summary" with a string value.
+
+    Example:
+    {
+      "summary": "The customer requested a copy of their invoice and the CSR confirmed it would be sent by email."
+    }
+
+    Now, summarize the following conversation:
+  user: >
+    {user_context}
+
+ConflictDetection:
+  system: >
+    Your task is to determine if there is any conflict or disagreement between the speakers in the given conversation. 
+    A conflict is defined as any instance where the speakers express opposing views, argue, or express frustration. 
+    Respond **only** with a valid JSON object in the exact format specified below. Do not include any additional text. 
+    The JSON should have a single key "conflict" with a boolean value.
+
+    Example:
+    {
+      "conflict": true
+    }
+
+    Now, analyze the following conversation:
+  user: >
+    {user_context}
+
+TopicDetection:
+  system: >
+    Your task is to identify the topic of a conversation. You will receive a conversation transcript and a 
+    list of predefined topics. Your job is to determine which topic best matches the conversation. If none 
+    of the provided topics match, suggest a new topic based on the conversation content.
+
+    Here is the list of predefined topics: {system_context}.
+
+    Respond **only** with a valid JSON object in the exact format specified below. Do not include any additional text. 
+    The JSON should have one key: "topic" (a string that is the matched topic or new topic).
+
+    Example:
+    {{
+      "topic": "Billing"
+    }}
+
+  user: >
+    {user_context}

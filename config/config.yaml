@@ -1,0 +1,23 @@
+runtime:
+  device: "cpu"                                       # Options: "cpu", "cuda"
+  compute_type: "int8"                                # Options: "int8", "float16"
+  cuda_alloc_conf: "expandable_segments:True"         # PyTorch CUDA Memory Management
+
+language:
+  audio: "en"                                         # Options: "en", "tr"
+  text: "en"                                          # Options: "en", "tr"
+
+models:
+  llama:
+    model_name: "meta-llama/Llama-3.2-3B-Instruct"    # Options: "meta-llama/Llama-3.2-3B-Instruct", etc.
+    huggingface_api_key: "${HUGGINGFACE_TOKEN}"
+
+  openai:
+    model_name: "gpt-4o"                              # Options: "gpt-4", "gpt-4o", etc.
+    openai_api_key: "${OPENAI_API_KEY}"
+
+  azure_openai:
+    model_name: "gpt-4o"                              # Options: "gpt-4", "gpt-4o", etc.
+    azure_openai_api_key: "${AZURE_OPENAI_API_KEY}"
+    azure_openai_api_base: "${AZURE_OPENAI_API_BASE}"
+    azure_openai_api_version: "${AZURE_OPENAI_API_VERSION}"
