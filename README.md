@@ -4,9 +4,7 @@
 ![License](https://img.shields.io/github/license/bunyaminergen/Callytics)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/bunyaminergen/Callytics)
 ![GitHub Discussions](https://img.shields.io/github/discussions/bunyaminergen/Callytics)
-
 ![GitHub Issues](https://img.shields.io/github/issues/bunyaminergen/Callytics)
-![Dependencies](https://img.shields.io/david/bunyaminergen/Callytics)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?logo=linkedin)](https://linkedin.com/in/bunyaminergen)
 
