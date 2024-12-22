@@ -1,0 +1,22 @@
+nemo_toolkit[asr]>=2.dev
+nltk==3.9.1
+faster-whisper==1.1.0
+demucs==4.0.1
+deepmultilingualpunctuation @ git+https://github.com/oliverguhr/deepmultilingualpunctuation.git@5a0dd7f4fd56687f59405aa8eba1144393d8b74b
+ctc-forced-aligner @ git+https://github.com/MahmoudAshraf97/ctc-forced-aligner.git@c7cc7ce609e5f8f1f553fbd1e53124447ffe46d8
+openai==1.57.0
+accelerate>=0.26.0
+torch==2.5.1
+pydub==0.25.1
+omegaconf==2.3.0
+python-dotenv==1.0.1
+transformers==4.47.0
+librosa==0.10.2.post1
+soundfile==0.12.1
+noisereduce==3.0.3
+numpy==1.26.4
+pyannote.audio==3.3.2
+watchdog==6.0.0
+scipy==1.14.1
+IPython==8.30.0
+pyyaml==6.0.2
