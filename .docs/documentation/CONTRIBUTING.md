@@ -394,7 +394,6 @@ Follow the [Default Project Template](https://github.com/bunyaminergen/DefaultPr
         - `Remove`
         - `Update`
         - `Test`
-        - `Document`
         - `Refactor`
     - Messages should use the present tense and imperative mood.
     - **Examples:**
