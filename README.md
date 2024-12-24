@@ -361,9 +361,31 @@ sudo systemctl daemon-reload
 ├── config
 │         ├── config.yaml
 │         ├── nemo
-│         │       └── diar_infer_telephonic.yaml
+│         │         └── diar_infer_telephonic.yaml
 │         └── prompt.yaml
+├── .data
+│         ├── example
+│         │         └── LogisticsCallCenterConversation.mp3
+│         └── input
+├── .db
+│         └── Callytics.sqlite
+├── .docs
+│         ├── documentation
+│         │         ├── CONTRIBUTING.md
+│         │         └── RESOURCES.md
+│         └── img
+│             ├── Callytics.drawio
+│             ├── Callytics.gif
+│             ├── CallyticsIcon.png
+│             ├── Callytics.png
+│             ├── Callytics.svg
+│            └── database.png
+├── .env
 ├── environment.yaml
+├── .gitattributes
+├── .github
+│         └── CODEOWNERS
+├── .gitignore
 ├── LICENSE
 ├── main.py
 ├── README.md
@@ -394,6 +416,8 @@ sudo systemctl daemon-reload
     │         └── utils.py
     └── utils
         └── utils.py
+
+19 directories, 43 files
 ```
 
 ---
