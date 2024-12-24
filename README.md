@@ -449,6 +449,7 @@ sudo systemctl daemon-reload
 ### Documentations
 
 - [RESOURCES](.docs/documentation/RESOURCES.md)
+- [CONTRIBUTING](.docs/documentation/CONTRIBUTING.md)
 
 ---
 
