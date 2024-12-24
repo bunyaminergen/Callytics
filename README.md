@@ -25,6 +25,9 @@ resulting data is inserted into the database.
 will be fine-tuned or trained from scratch, and various optimization efforts will be applied. For more information,
 you can check out the [Upcoming](#upcoming) section._
 
+**Note**: _If you would like to contribute to this repository,
+please read the [CONTRIBUTING](.docs/documentation/CONTRIBUTING.md) first._
+
 ---
 
 ### Table of Contents
