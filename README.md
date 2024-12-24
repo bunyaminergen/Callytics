@@ -25,6 +25,9 @@ resulting data is inserted into the database.
 will be fine-tuned or trained from scratch, and various optimization efforts will be applied. For more information,
 you can check out the [Upcoming](#upcoming) section._
 
+**Note**: _If you would like to contribute to this repository,
+please read the [CONTRIBUTING](.docs/documentation/CONTRIBUTING.md) first._
+
 ---
 
 ### Table of Contents
@@ -361,9 +364,31 @@ sudo systemctl daemon-reload
 ├── config
 │         ├── config.yaml
 │         ├── nemo
-│         │       └── diar_infer_telephonic.yaml
+│         │         └── diar_infer_telephonic.yaml
 │         └── prompt.yaml
+├── .data
+│         ├── example
+│         │         └── LogisticsCallCenterConversation.mp3
+│         └── input
+├── .db
+│         └── Callytics.sqlite
+├── .docs
+│         ├── documentation
+│         │         ├── CONTRIBUTING.md
+│         │         └── RESOURCES.md
+│         └── img
+│             ├── Callytics.drawio
+│             ├── Callytics.gif
+│             ├── CallyticsIcon.png
+│             ├── Callytics.png
+│             ├── Callytics.svg
+│            └── database.png
+├── .env
 ├── environment.yaml
+├── .gitattributes
+├── .github
+│         └── CODEOWNERS
+├── .gitignore
 ├── LICENSE
 ├── main.py
 ├── README.md
@@ -394,6 +419,8 @@ sudo systemctl daemon-reload
     │         └── utils.py
     └── utils
         └── utils.py
+
+19 directories, 43 files
 ```
 
 ---
