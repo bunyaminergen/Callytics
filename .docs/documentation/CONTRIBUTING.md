@@ -1,4 +1,4 @@
-# Contributing to [Project]
+# Contributing to Callytics
 
 Thank you for your interest in contributing to this project! We’re excited to have you on board. This guide is designed
 to make the contribution process clear and efficient.
