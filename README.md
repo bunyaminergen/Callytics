@@ -225,9 +225,7 @@ $$
 
 ### Demo
 
-[Video](videoURL)
-[![Video](önizlemeGörseliURLsi)](videoURL)
-![GIF](draft.gif)
+![callyticsDemo](.docs/img/callyticsDemo.gif)
 
 ---
 
