@@ -215,6 +215,7 @@ $$
 
 ### Features
 
+- [x] Speech Enhancement
 - [x] Sentiment Analysis
 - [x] Profanity Word Detection
 - [x] Summary
@@ -454,7 +455,7 @@ sudo systemctl daemon-reload
 - [ ] **Real-Time Analysis:** Enable real-time analysis capabilities within the system.
 - [ ] **Dockerization:** Containerize the repository to ensure seamless deployment and environment consistency.
 - [ ] **New Transcription Models:** Integrate and test new transcription models suchas [AIOLA’s Multi-Head Speech Recognition Model](https://venturebeat.com/ai/aiola-drops-ultra-fast-multi-head-speech-recognition-model-beats-openai-whisper/).
-- [ ] **Noise Reduction Model:** Identify, test, and integrate a deep learning-based noise reduction model. Consider existing models like **Facebook Research Denoiser**, **Noise2Noise**, **Audio Denoiser CNN**, and **Speech-Enhancement with Deep Learning**. Write test scripts for evaluation, and if necessary, train a new model for optimal performance.
+- [ ] **Noise Reduction Model:** Identify, test, and integrate a deep learning-based noise reduction model. Consider existing models like **Facebook Research Denoiser**, **Noise2Noise**, **Audio Denoiser CNN**. Write test scripts for evaluation, and if necessary, train a new model for optimal performance.
 
 ##### Considerations
 

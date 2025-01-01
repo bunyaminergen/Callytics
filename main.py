@@ -8,10 +8,10 @@ from nemo.collections.asr.models.msdd_models import NeuralDiarizer
 # Local imports
 from src.audio.utils import Formatter
 from src.audio.metrics import SilenceStats
-from src.audio.preprocessing import Denoiser
 from src.audio.error import DialogueDetecting
 from src.audio.alignment import ForcedAligner
 from src.audio.effect import DemucsVocalSeparator
+from src.audio.preprocessing import SpeechEnhancement
 from src.audio.io import SpeakerTimestampReader, TranscriptWriter
 from src.audio.analysis import WordSpeakerMapper, SentenceSpeakerMapper, Audio
 from src.audio.processing import AudioProcessor, Transcriber, PunctuationRestorer
@@ -58,7 +58,7 @@ async def main(audio_file_path: str):
 
     # Initialize Classes
     dialogue_detector = DialogueDetecting(delete_original=True)
-    denoiser = Denoiser(config_path=config_path)
+    enhancer = SpeechEnhancement(config_path=config_path, output_dir=temp_dir)
     separator = DemucsVocalSeparator()
     processor = AudioProcessor(audio_path=audio_file_path, temp_dir=temp_dir)
     transcriber = Transcriber(device=device, compute_type=compute_type)
@@ -75,12 +75,12 @@ async def main(audio_file_path: str):
     if not has_dialogue:
         return
 
-    # Step 2: Denoising
-    audio_path = denoiser.denoise_audio(
+    # Step 2: Speech Enhancement
+    audio_path = enhancer.enhance_audio(
         input_path=audio_file_path,
-        output_dir=temp_dir,
-        noise_threshold=0.1,
-        print_output=True
+        output_path=os.path.join(temp_dir, "enhanced.wav"),
+        noise_threshold=0.0001,
+        verbose=True
     )
 
     # Step 3: Vocal Separation
