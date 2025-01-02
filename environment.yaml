@@ -28,3 +28,4 @@ dependencies:
       - scipy==1.14.1
       - IPython==8.30.0
       - pyyaml==6.0.2
+      - MPSENet==1.0.3
