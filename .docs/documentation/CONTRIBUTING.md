@@ -456,6 +456,13 @@ Example:
 
 - `hotfix/fix-security-issue`
 
+##### Docfix Branches
+
+Use the `docfix/` prefix for changes regarding documentation.  
+Example:
+
+- `docfix/add-readme-to-artitecture-section`
+
 ##### Experiment Branches
 
 Use the `experiment/` prefix for experimental or proof-of-concept work.  
