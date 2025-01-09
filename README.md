@@ -438,6 +438,10 @@ sudo systemctl daemon-reload
 - [v1.0.0](https://github.com/bunyaminergen/Callytics/archive/refs/tags/v1.0.0.zip) _.zip_
 - [v1.0.0](https://github.com/bunyaminergen/Callytics/archive/refs/tags/v1.0.0.tar.gz) _.tar.gz_
 
+
+- [v1.1.0](https://github.com/bunyaminergen/Callytics/archive/refs/tags/v1.1.0.zip) _.zip_
+- [v1.1.0](https://github.com/bunyaminergen/Callytics/archive/refs/tags/v1.1.0.tar.gz) _.tar.gz_
+
 ##### Branches
 
 - [main](https://github.com/bunyaminergen/Callytics/tree/main)
