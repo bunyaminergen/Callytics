@@ -430,6 +430,9 @@ Follow the [Default Project Template](https://github.com/bunyaminergen/DefaultPr
 Please push all development work to the `develop` branch. Once the work on your branch is finished, merge it into
 `develop` and then delete the branch to keep the repository clean.
 
+**Important:** Please only create branches that begin with the prefixes listed below. If you would like to propose a new
+prefix, kindly open an issue on GitHub.
+
 ---
 
 ##### Bug Branches
