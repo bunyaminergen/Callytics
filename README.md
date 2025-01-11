@@ -21,7 +21,7 @@ identify areas for improvement, and enhance overall service quality.
 When an audio file is placed in the `.data/input` directory, the entire pipeline automatically starts running, and the
 resulting data is inserted into the database.
 
-**Note**: _This is only a `v1.0.0 Initial` version; many new features will be added, models
+**Note**: _This is only a `v1.1.0 Initial` version; many new features will be added, models
 will be fine-tuned or trained from scratch, and various optimization efforts will be applied. For more information,
 you can check out the [Upcoming](#upcoming) section._
 
@@ -519,7 +519,7 @@ sudo systemctl daemon-reload
   year         = {2024},
   month        = {12},
   url          = {https://github.com/bunyaminergen/Callytics},
-  version      = {v1.0.0},
+  version      = {v1.1.0},
 }
 ```
 
