@@ -21,7 +21,7 @@ identify areas for improvement, and enhance overall service quality.
 When an audio file is placed in the `.data/input` directory, the entire pipeline automatically starts running, and the
 resulting data is inserted into the database.
 
-**Note**: _This is only a `v1.0.0 Initial` version; many new features will be added, models
+**Note**: _This is only a `v1.1.0 Initial` version; many new features will be added, models
 will be fine-tuned or trained from scratch, and various optimization efforts will be applied. For more information,
 you can check out the [Upcoming](#upcoming) section._
 
@@ -52,6 +52,10 @@ please read the [CONTRIBUTING](.docs/documentation/CONTRIBUTING.md) first._
 ---
 
 ### Prerequisites
+
+##### General
+
+- `Python 3.11` _(or above)_
 
 ##### Llama
 
@@ -438,9 +442,14 @@ sudo systemctl daemon-reload
 - [v1.0.0](https://github.com/bunyaminergen/Callytics/archive/refs/tags/v1.0.0.zip) _.zip_
 - [v1.0.0](https://github.com/bunyaminergen/Callytics/archive/refs/tags/v1.0.0.tar.gz) _.tar.gz_
 
+
+- [v1.1.0](https://github.com/bunyaminergen/Callytics/archive/refs/tags/v1.1.0.zip) _.zip_
+- [v1.1.0](https://github.com/bunyaminergen/Callytics/archive/refs/tags/v1.1.0.tar.gz) _.tar.gz_
+
 ##### Branches
 
-- [Main](https://github.com/bunyaminergen/Callytics/main/)
+- [main](https://github.com/bunyaminergen/Callytics/tree/main)
+- [develop](https://github.com/bunyaminergen/Callytics/tree/develop)
 
 ---
 
@@ -459,6 +468,7 @@ sudo systemctl daemon-reload
 
 ##### Considerations
 
+- [ ] Detect CSR's identity via Voice Recognition/Identification instead of Diarization and LLM.
 - [ ] Transform the code structure into a pipeline for better modularity and scalability.
 - [ ] Publish the repository as a Python package on **PyPI** for wider distribution.
 - [ ] Convert the repository into a Linux package to support Linux-based systems.
@@ -514,7 +524,7 @@ sudo systemctl daemon-reload
   year         = {2024},
   month        = {12},
   url          = {https://github.com/bunyaminergen/Callytics},
-  version      = {v1.0.0},
+  version      = {v1.1.0},
 }
 ```
 
