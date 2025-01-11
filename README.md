@@ -53,6 +53,10 @@ please read the [CONTRIBUTING](.docs/documentation/CONTRIBUTING.md) first._
 
 ### Prerequisites
 
+##### General
+
+- `Python 3.11` _(or above)_
+
 ##### Llama
 
 - `GPU (min 24GB)` _(or above)_
