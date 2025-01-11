@@ -466,6 +466,15 @@ Example:
 
 - `docfix/add-readme-to-artitecture-section`
 
+##### Test Branches
+
+Use the `test/` prefix for branches that focus on writing or updating tests, or conducting specific test-related work.  
+Examples:
+
+- `test/add-integration-tests`
+- `test/refactor-unit-tests`
+- `test/performance-testing`
+
 ##### Experiment Branches
 
 Use the `experiment/` prefix for experimental or proof-of-concept work.  
