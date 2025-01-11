@@ -464,6 +464,7 @@ sudo systemctl daemon-reload
 
 ##### Considerations
 
+- [ ] Detect CSR's identity via Voice Recognition/Identification instead of Diarization and LLM.
 - [ ] Transform the code structure into a pipeline for better modularity and scalability.
 - [ ] Publish the repository as a Python package on **PyPI** for wider distribution.
 - [ ] Convert the repository into a Linux package to support Linux-based systems.
