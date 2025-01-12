@@ -391,7 +391,7 @@ Follow the [Default Project Template](https://github.com/bunyaminergen/DefaultPr
     - **Start your commit message with only of the following verbs** and then explain what you did:
         - `Add`
         - `Fix`
-        - `Remove`
+        - `Remove` or `Delete`
         - `Update`
         - `Test`
         - `Refactor`
