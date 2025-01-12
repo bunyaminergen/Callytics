@@ -427,13 +427,33 @@ Follow the [Default Project Template](https://github.com/bunyaminergen/DefaultPr
 
 ### Branches
 
+To maintain consistency across all branches, follow these guidelines:
+
+- **Start with one of the following action keywords in lowercase:**
+    - `add`
+    - `fix`
+    - `remove` or `delete`
+    - `update`
+    - `test`
+    - `refactor`
+- Use hyphens (`-`) to separate words in the branch name.
+- Avoid special characters, spaces, or uppercase letters.
+- Keep branch names concise but descriptive.
+
+**Example Branch Names:**
+
+- `add-new-release`
+- `fix-critical-bug`
+- `remove-unused-dependencies`
+- `update-api-endpoints`
+- `test-api-performance`
+- `refactor-code-structure`
+
 Please push all development work to the `develop` branch. Once the work on your branch is finished, merge it into
 `develop` and then delete the branch to keep the repository clean.
 
 **Important:** Please only create branches that begin with the prefixes listed below. If you would like to propose a new
 prefix, kindly open an issue on GitHub.
-
----
 
 ##### Bug Branches
 
