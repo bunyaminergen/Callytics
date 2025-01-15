@@ -61,7 +61,7 @@ dependencies = [
 Homepage = "https://github.com/bunyaminergen/Callytics"
 Repository = "https://github.com/bunyaminergen/Callytics"
 Documentation = "https://github.com/bunyaminergen/Callytics#readme"
-Website = "https://bunyaminergen.com"
+Website = "https://github.com/bunyaminergen/Callytics"
 
 [tool.setuptools]
 include-package-data = false
