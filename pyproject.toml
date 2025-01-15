@@ -1,0 +1,84 @@
+[project]
+name = "callytics"
+description = "An advanced call analytics solution leveraging speech recognition and LLMs to analyze phone conversations"
+license = { text = "MIT" }
+version = "1.1.0"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "Bunyamin Ergen", email = "info@bunyaminergen.com" }
+]
+maintainers = [
+    { name = "Bunyamin Ergen", email = "info@bunyaminergen.com" },
+]
+keywords = [
+    "call-analytics",
+    "speech-recognition",
+    "machine-learning",
+    "nlp",
+    "audio-processing",
+    "AI",
+    "LLM",
+]
+classifiers = [
+    'Development Status :: 4 - Beta',
+    'Intended Audience :: Developers',
+    'Intended Audience :: Science/Research',
+    'License :: OSI Approved :: MIT License',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.11',
+    'Topic :: Scientific/Engineering :: Artificial Intelligence',
+    'Topic :: Multimedia :: Sound/Audio :: Speech',
+    'Operating System :: POSIX :: Linux',
+]
+dependencies = [
+    "nemo_toolkit[asr]>=2.dev",
+    "nltk==3.9.1",
+    "faster-whisper==1.1.0",
+    "demucs==4.0.1",
+    "deepmultilingualpunctuation @ git+https://github.com/oliverguhr/deepmultilingualpunctuation.git@5a0dd7f4fd56687f59405aa8eba1144393d8b74b",
+    "ctc-forced-aligner @ git+https://github.com/MahmoudAshraf97/ctc-forced-aligner.git@c7cc7ce609e5f8f1f553fbd1e53124447ffe46d8",
+    "openai==1.57.0",
+    "accelerate>=0.26.0",
+    "torch>=2.5.1",
+    "pydub==0.25.1",
+    "omegaconf==2.3.0",
+    "python-dotenv==1.0.1",
+    "transformers==4.47.0",
+    "librosa==0.10.2.post1",
+    "soundfile==0.12.1",
+    "noisereduce==3.0.3",
+    "numpy==1.26.4",
+    "pyannote.audio==3.3.2",
+    "watchdog==6.0.0",
+    "scipy==1.14.1",
+    "IPython==8.30.0",
+    "pyyaml==6.0.2",
+    "MPSENet==1.0.3"
+]
+
+[project.urls]
+Homepage = "https://github.com/bunyaminergen/Callytics"
+Repository = "https://github.com/bunyaminergen/Callytics"
+Documentation = "https://github.com/bunyaminergen/Callytics#readme"
+Website = "https://bunyaminergen.com"
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.packages.find]
+include = ["callytics*"]
+exclude = ["docs*", "test*", "examples*"]
+
+[tool.setuptools.package-data]
+callytics = [
+    "py.typed",
+    "config/*.yaml",
+    "config/nemo/*.yaml",
+    "db/sql/*.sql",
+    ".db/*",
+]
+
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"

@@ -8,8 +8,8 @@ from typing import Annotated, Optional, Dict, Any, List
 import yaml
 
 # Local imports
-from src.text.model import LanguageModelManager
-from src.audio.utils import Formatter
+from callytics.text.model import LanguageModelManager
+from callytics.audio.utils import Formatter
 
 
 class LLMOrchestrator:

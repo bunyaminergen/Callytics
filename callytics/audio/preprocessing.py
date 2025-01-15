@@ -11,7 +11,7 @@ from noisereduce import reduce_noise
 from MPSENet import MPSENet
 
 # Local imports
-from src.utils.utils import Logger
+from callytics.utils.utils import Logger
 
 
 class Denoiser:

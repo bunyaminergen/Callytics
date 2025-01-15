@@ -12,7 +12,7 @@ from pydub import AudioSegment
 from deepmultilingualpunctuation import PunctuationModel
 
 # Local imports
-from src.audio.utils import TokenizerUtils
+from callytics.audio.utils import TokenizerUtils
 
 
 class AudioProcessor:

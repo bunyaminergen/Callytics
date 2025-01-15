@@ -6,19 +6,19 @@ from omegaconf import OmegaConf
 from nemo.collections.asr.models.msdd_models import NeuralDiarizer
 
 # Local imports
-from src.audio.utils import Formatter
-from src.audio.metrics import SilenceStats
-from src.audio.error import DialogueDetecting
-from src.audio.alignment import ForcedAligner
-from src.audio.effect import DemucsVocalSeparator
-from src.audio.preprocessing import SpeechEnhancement
-from src.audio.io import SpeakerTimestampReader, TranscriptWriter
-from src.audio.analysis import WordSpeakerMapper, SentenceSpeakerMapper, Audio
-from src.audio.processing import AudioProcessor, Transcriber, PunctuationRestorer
-from src.text.utils import Annotator
-from src.text.llm import LLMOrchestrator, LLMResultHandler
-from src.utils.utils import Cleaner, Watcher
-from src.db.manager import Database
+from callytics.audio.utils import Formatter
+from callytics.audio.metrics import SilenceStats
+from callytics.audio.error import DialogueDetecting
+from callytics.audio.alignment import ForcedAligner
+from callytics.audio.effect import DemucsVocalSeparator
+from callytics.audio.preprocessing import SpeechEnhancement
+from callytics.audio.io import SpeakerTimestampReader, TranscriptWriter
+from callytics.audio.analysis import WordSpeakerMapper, SentenceSpeakerMapper, Audio
+from callytics.audio.processing import AudioProcessor, Transcriber, PunctuationRestorer
+from callytics.text.utils import Annotator
+from callytics.text.llm import LLMOrchestrator, LLMResultHandler
+from callytics.utils.utils import Cleaner, Watcher
+from callytics.db.manager import Database
 
 
 async def main(audio_file_path: str):
