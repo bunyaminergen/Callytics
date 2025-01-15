@@ -1,6 +1,5 @@
 # Standard library imports
 import os
-
 # Related third-party imports
 from omegaconf import OmegaConf
 from nemo.collections.asr.models.msdd_models import NeuralDiarizer
@@ -19,6 +18,7 @@ from callytics.text.utils import Annotator
 from callytics.text.llm import LLMOrchestrator, LLMResultHandler
 from callytics.utils.utils import Cleaner, Watcher
 from callytics.db.manager import Database
+from callytics import get_resource_path
 
 
 async def main(audio_file_path: str):
@@ -42,13 +42,14 @@ async def main(audio_file_path: str):
     rttm_file_path = os.path.join(temp_dir, "pred_rttms", "mono_file.rttm")
     transcript_output_path = ".temp/output.txt"
     srt_output_path = ".temp/output.srt"
-    config_path = "config/config.yaml"
-    prompt_path = "config/prompt.yaml"
-    db_path = ".db/Callytics.sqlite"
-    db_topic_fetch_path = "src/db/sql/TopicFetch.sql"
-    db_topic_insert_path = "src/db/sql/TopicInsert.sql"
-    db_audio_properties_insert_path = "src/db/sql/AudioPropertiesInsert.sql"
-    db_utterance_insert_path = "src/db/sql/UtteranceInsert.sql"
+    config_path = get_resource_path(__package__, "config/config.yaml")
+    prompt_path = get_resource_path(__package__, "config/prompt.yaml")
+    db_path = get_resource_path(__package__, ".db/Callytics.sqlite")
+    db_topic_fetch_path = get_resource_path(__package__, "db/sql/TopicFetch.sql")
+    db_topic_insert_path = get_resource_path(__package__, "db/sql/TopicInsert.sql")
+    db_audio_properties_insert_path = get_resource_path(__package__, "db/sql/AudioPropertiesInsert.sql")
+    db_utterance_insert_path = get_resource_path(__package__, "db/sql/UtteranceInsert.sql")
+
 
     # Configuration
     config = OmegaConf.load(config_path)
