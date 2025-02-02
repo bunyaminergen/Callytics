@@ -486,6 +486,7 @@ sudo systemctl daemon-reload
 
 - [RESOURCES](.docs/documentation/RESOURCES.md)
 - [CONTRIBUTING](.docs/documentation/CONTRIBUTING.md)
+- [PRESENTATION](.docs/presentation/CallyticsPresentationEN.pdf)
 
 ---
 
