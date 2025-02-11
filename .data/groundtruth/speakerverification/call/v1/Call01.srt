@@ -1,0 +1,41 @@
+1
+00:00:03,453 --> 00:00:09,166
+[CSR] Hello and welcome to Callytics! My name is Emily. How may I assist you?
+
+2
+00:00:09,582 --> 00:00:20,410
+[Customer] Hi, Emily. I’ve been having trouble receiving notification emails.
+They used to arrive instantly, but now there’s a long delay.
+
+3
+00:00:20,599 --> 00:00:27,879
+[CSR] I’m sorry for the inconvenience. Let me take a look.
+Could you give me your account details so I can verify the email settings?
+
+4
+00:00:28,552 --> 00:00:35,850
+[Customer] Of course. My username is user101,
+and the associated email is bunyamin@gmail.com.
+
+5
+00:00:38,028 --> 00:00:51,882
+[CSR] Thank you. Checking now… It appears your notification preferences
+were reset during a recent update. I’ll adjust them back to real-time alerts,
+so you should start getting prompt emails again.
+
+6
+00:00:52,630 --> 00:00:56,053
+[Customer] That’s great news. Thanks for fixing it so quickly!
+
+7
+00:00:57,656 --> 00:01:05,947
+[CSR] You’re welcome. Thanks for contacting Callytics.
+Let me know if there’s anything else I can do for you today.
+
+8
+00:01:06,016 --> 00:01:08,364
+[Customer] Nope, that’s everything. Have a good day, Emily.
+
+9
+00:01:09,016 --> 00:01:11,575
+[CSR] You too! Take care. Goodbye.
