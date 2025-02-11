@@ -40,6 +40,7 @@ please read the [CONTRIBUTING](.docs/documentation/CONTRIBUTING.md) first._
 - [Installation](#installation)
 - [File Structure](#file-structure)
 - [Database Structure](#database-structure)
+- [Datasets](#datasets)
 - [Version Control System](#version-control-system)
 - [Upcoming](#upcoming)
 - [Documentations](#documentations)
@@ -432,6 +433,12 @@ sudo systemctl daemon-reload
 
 ![Database Diagram](.docs/img/database.png)
 
+
+---
+
+### Datasets
+
+- [Callytics Speaker Verification Dataset *(CSVD)*](.data/groundtruth/speakerverification/DatasetCard.md)
 
 ---
 
