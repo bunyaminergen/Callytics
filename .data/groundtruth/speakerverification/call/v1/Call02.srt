@@ -1,0 +1,43 @@
+1
+00:00:03,599 --> 00:00:09,557
+[CSR] Hi there! You’ve reached Callytics Support, and this is Emily speaking. What can I do for you today?
+
+2
+00:00:10,153 --> 00:00:17,480
+[Customer] Hello, Emily. I recently upgraded to your premium subscription, but I haven’t seen
+any new features activated on my account.
+
+3
+00:00:19,213 --> 00:00:26,634
+[CSR] Thanks for letting me know. Could you share your account email or username so I
+can check what might be causing the issue?
+
+4
+00:00:26,825 --> 00:00:30,914
+[Customer] Sure, my email is bunyamin@gmail.com.
+
+5
+00:00:32,677 --> 00:00:49,882
+[CSR] Perfect. One moment while I look that up… It appears there was a slight delay with
+the activation. I’ll go ahead and expedite the process. Your premium features should be live within
+the next 15 minutes.
+
+6
+00:00:49,933 --> 00:00:51,769
+[Customer] Great, thank you so much for resolving that!
+
+7
+00:00:53,567 --> 00:00:56,095
+[CSR] You’re welcome. Is there anything else I can help you with?
+
+8
+00:00:56,647 --> 00:00:57,772
+[Customer] That’s all. Thanks again!
+
+9
+00:00:59,079 --> 00:01:03,559
+[CSR] My pleasure. Thanks for reaching out to Callytics, and have a wonderful day!
+
+10
+00:01:04,203 --> 00:01:04,942
+[Customer] Thank you.
