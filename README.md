@@ -8,8 +8,6 @@
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?logo=linkedin)](https://linkedin.com/in/bunyaminergen)
 
-</div>
-
 # Callytics
 
 `Callytics` is an advanced call analytics solution that leverages speech recognition and large language models (LLMs)
@@ -27,6 +25,8 @@ you can check out the [Upcoming](#upcoming) section._
 
 **Note**: _If you would like to contribute to this repository,
 please read the [CONTRIBUTING](.docs/documentation/CONTRIBUTING.md) first._
+
+</div>
 
 ---
 
@@ -470,8 +470,11 @@ sudo systemctl daemon-reload
 - [ ] **Warnings:** Add meaningful and detailed warning messages for better user guidance.
 - [ ] **Real-Time Analysis:** Enable real-time analysis capabilities within the system.
 - [ ] **Dockerization:** Containerize the repository to ensure seamless deployment and environment consistency.
-- [ ] **New Transcription Models:** Integrate and test new transcription models suchas [AIOLA’s Multi-Head Speech Recognition Model](https://venturebeat.com/ai/aiola-drops-ultra-fast-multi-head-speech-recognition-model-beats-openai-whisper/).
-- [ ] **Noise Reduction Model:** Identify, test, and integrate a deep learning-based noise reduction model. Consider existing models like **Facebook Research Denoiser**, **Noise2Noise**, **Audio Denoiser CNN**. Write test scripts for evaluation, and if necessary, train a new model for optimal performance.
+- [ ] **New Transcription Models:** Integrate and test new transcription models
+  suchas [AIOLA’s Multi-Head Speech Recognition Model](https://venturebeat.com/ai/aiola-drops-ultra-fast-multi-head-speech-recognition-model-beats-openai-whisper/).
+- [ ] **Noise Reduction Model:** Identify, test, and integrate a deep learning-based noise reduction model. Consider
+  existing models like **Facebook Research Denoiser**, **Noise2Noise**, **Audio Denoiser CNN**. Write test scripts for
+  evaluation, and if necessary, train a new model for optimal performance.
 
 ##### Considerations
 
@@ -479,13 +482,17 @@ sudo systemctl daemon-reload
 - [ ] Transform the code structure into a pipeline for better modularity and scalability.
 - [ ] Publish the repository as a Python package on **PyPI** for wider distribution.
 - [ ] Convert the repository into a Linux package to support Linux-based systems.
-- [ ] Implement a two-step processing workflow: perform **diarization** (speaker segmentation) first, then apply **transcription** for each identified speaker separately. This approach can improve transcription accuracy by leveraging speaker separation.
-- [ ] Enable **parallel processing** for tasks such as diarization, transcription, and model inference to improve overall system performance and reduce processing time.
+- [ ] Implement a two-step processing workflow: perform **diarization** (speaker segmentation) first, then apply *
+  *transcription** for each identified speaker separately. This approach can improve transcription accuracy by
+  leveraging speaker separation.
+- [ ] Enable **parallel processing** for tasks such as diarization, transcription, and model inference to improve
+  overall system performance and reduce processing time.
 - [ ] Explore using **Docker Compose** for multi-container orchestration if required.
-- [ ] Upload the models and relevant resources to **Hugging Face** for easier access, sharing, and community collaboration.
+- [ ] Upload the models and relevant resources to **Hugging Face** for easier access, sharing, and community
+  collaboration.
 - [ ] Consider writing a **Command Line Interface (CLI)** to simplify user interaction and improve usability.
-- [ ] Test the ability to use **different language models (LLMs)** for specific tasks. For instance, using **BERT** for profanity detection. Evaluate their performance and suitability for different use cases as a feature.
-
+- [ ] Test the ability to use **different language models (LLMs)** for specific tasks. For instance, using **BERT** for
+  profanity detection. Evaluate their performance and suitability for different use cases as a feature.
 
 ---
 
