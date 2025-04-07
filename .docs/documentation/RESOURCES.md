@@ -58,6 +58,7 @@
 - [MP-SENet: A Speech Enhancement Model with Parallel Denoising of Magnitude and Phase Spectra](https://arxiv.org/abs/2305.13686)
 - [FINALLY: fast and universal speech enhancement with studio-like quality](https://arxiv.org/abs/2410.05920)
 - [Explicit Estimation of Magnitude and Phase Spectra in Parallel for High-Quality Speech Enhancement](https://arxiv.org/abs/2308.08926)
+- [\[2410.08235\] A Recurrent Neural Network Approach to the Answering Machine Detection Problem](https://arxiv.org/abs/2410.08235)
 
 ---
 
@@ -105,6 +106,8 @@
 - [The Audio Developer Conference - ADC is an annual event celebrating all audio development technologies, from music applications and game audio to audio processing and embedded systems.](https://audio.dev/)
 - [Look Once to Hear: Target Speech Hearing with Noisy Examples - CHI '24](https://programs.sigchi.org/chi/2024/program/content/147319)
 - [Reinforcement Learning Based Speech Enhancement for Robust Speech Recognition > Introduction | Class Central Classroom](https://www.classcentral.com/classroom/youtube-reinforcement-learning-based-speech-enhancement-for-robust-speech-recognition-131999)
+- [Sound classification with YAMNet TensorFlow Hub](https://www.tensorflow.org/hub/tutorials/yamnet)
+- [DEEP-VOICE: DeepFake Voice Recognition Dataset | Papers With Code](https://paperswithcode.com/dataset/deep-voice-deepfake-voice-recognition)
 
 ---
 
