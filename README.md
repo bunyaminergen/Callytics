@@ -231,7 +231,9 @@ $$
 
 ### Demo
 
-![callyticsDemo](.docs/img/callyticsDemo.gif)
+Plese click for a demo: [Callytics Demo](https://huggingface.co/spaces/bunyaminergen/CallyticsDemo)
+
+![callyticsDemo](.docs/img/CallyticsDemoImage.png)
 
 ---
 
