@@ -28,6 +28,66 @@ owner, and the sales floor loses a week.
 Every custom field retains `legacy_schema_name`, so any historical report can
 be traced back to its LeadSquared origin.
 
+## What the data actually looks like
+
+Measured against the live tenant, not its configuration screen. The two
+disagree badly, and every item below would have corrupted the migration if the
+mapping had been built from schema alone.
+
+### Placeholder values that look like data
+
+Dropdown defaults nobody changed. Over a 6-week sample of converted leads,
+`Select Area` was the **most common district value in the account** (188
+leads) — more than Ernakulam, Kollam and Kozhikode combined. `Select Source`
+is a configured lead source. `NA` and `other_courses` appear in the course
+field.
+
+Imported verbatim these become real-looking segments that mean nothing, and
+they will be charted. `lsq_values.PLACEHOLDER_VALUES` nulls them on import.
+
+### Field population is far lower than the schema implies
+
+Share of **converted** leads with the field filled (2026-06-01 → 2026-08-14):
+
+| Field | Populated |
+|---|---|
+| `mx_Vertical` | 3 % |
+| `mx_Courses` | 32 % |
+| `mx_Course_Category` | 30 % |
+| `mx_District` | 52 % (excluding `Select Area`) |
+
+Two consequences. `mx_Vertical` is seeded **inactive** — carrying it keeps the
+mapping traceable, but showing a 97 %-empty field to counsellors is noise.
+And scoring counts a curated `QUALIFYING_FIELDS` list rather than all 31
+mapped fields; completeness across mostly-empty fields measures which web form
+the lead came through, not how qualified they are.
+
+### The same course spelled several ways
+
+| Variant | Leads | Canonical |
+|---|---|---|
+| `SAP S4/HANA FI` | 9 | `SAP S4/HANA FI` |
+| `sap_s/4hana_fi` | 3 | ↳ same course |
+| `IBAP` | 2 | `IBAP` |
+| `international_business_accounting_professional` | 1 | ↳ same course |
+| `accounting_&_finance` | 4 | `Accounting & Finance` (a URL slug that leaked out of a web form) |
+| `Gulf Accounting Analyst` / `...Program` | 1 / 1 | one programme, listed twice **in the configuration** |
+
+LeadSquared's own `find_duplicate_values` reports **zero** duplicate groups
+here, because it only compares case, spacing and punctuation. These differ
+semantically, so `COURSE_ALIASES` is a real synonym map rather than a
+case-fold.
+
+### Two multi-value separators
+
+`PGDIFA;APBFA` uses a semicolon; `CAS + SAP` and `IBAP+SAP FI` use a plus.
+`parse_courses` handles both.
+
+Splitting on `+` leaves an ambiguous fragment — bare `SAP`, when the catalogue
+has three SAP courses. It is **kept verbatim and reported**, never guessed:
+attributing a lead to the wrong programme is worse than flagging it for a
+human.
+
 ## Known translation decisions
 
 - **WhatsApp consent.** LeadSquared has no suppression column for it; the

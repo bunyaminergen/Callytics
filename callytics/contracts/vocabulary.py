@@ -158,14 +158,28 @@ PAID_SOURCES: frozenset[str] = frozenset(
         "Classifieds",
         "Influencers",
         "College Data purchase",
-        "Meta Whatsapp KL",
-        "Meta Whatsapp KA",
+        # Ad spend that lands in WhatsApp. These are deliberately in both
+        # PAID_SOURCES and HIGH_INTENT_SOURCES: the click cost money (so they
+        # earn the tightest SLA) and the lead then messaged us (so they score
+        # as high intent). The two sets answer different questions.
         "Google Whatsapp KL",
         "Google Whatsapp KA",
+        "Meta Whatsapp KL",
+        "Meta Whatsapp KA",
     }
 )
 
-#: Referral and walk-in leads convert far better; they earn a scoring bonus.
+#: Sources that convert best, ranked from measured enrolments rather than
+#: assumption. Over 2026-07-01 to 2026-08-14 (258 enrolments) the mix was:
+#: Inbound Phone call 65, Whatsapp Enquiry - KL 54, Referral - New admissions
+#: 43, Referral - Existing Students & Alumni 24, FB Lead Ads 22, Direct Walk-in
+#: 16, Google Ads 14.
+#:
+#: The correction worth noting: inbound WhatsApp enquiries are the *second
+#: largest* source of enrolments. They were initially filed with paid social
+#: because of the channel name, which would have under-scored the account's
+#: best-converting inbound route. An inbound "Hi" on WhatsApp is a person
+#: raising their hand, not an impression served — it belongs here.
 HIGH_INTENT_SOURCES: frozenset[str] = frozenset(
     {
         "Direct Walk-in",
@@ -175,6 +189,12 @@ HIGH_INTENT_SOURCES: frozenset[str] = frozenset(
         "Channel Partner Referral",
         "Inbound Phone call",
         "Website Enquiry/Chat",
+        "Whatsapp Enquiry - KL",
+        "Whatsapp Enquiry KA",
+        "Google Whatsapp KL",
+        "Google Whatsapp KA",
+        "Meta Whatsapp KL",
+        "Meta Whatsapp KA",
     }
 )
 

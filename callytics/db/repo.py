@@ -17,6 +17,7 @@ from sqlalchemy.orm import Session
 
 from ..contracts.vocabulary import ENGAGEMENT_ACTIVITIES, ActivityType, Direction
 from ..domain.identity import ExistingLead
+from ..integrations import lsq_values
 from ..util import utcnow, uuid7
 from .models import (
     Activity,
@@ -297,6 +298,19 @@ def field_definition_keys(session: Session) -> list[str]:
     return list(
         session.execute(select(FieldDefinition.key).where(FieldDefinition.is_active.is_(True))).scalars().all()
     )
+
+
+def qualifying_field_keys(session: Session) -> list[str]:
+    """The short list of fields that actually signal a qualified enquiry.
+
+    Measured population rates on the live account are low — ``mx_Vertical`` is
+    filled on 3 % of even *converted* leads — so scoring completeness across
+    every mapped field would mostly measure which web form the lead came
+    through. Only fields that are both meaningful and populated often enough
+    to discriminate are counted.
+    """
+    active = set(field_definition_keys(session))
+    return [key for key in lsq_values.QUALIFYING_FIELDS if key in active]
 
 
 # --- ops ------------------------------------------------------------------

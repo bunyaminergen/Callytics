@@ -276,7 +276,7 @@ def refresh_score(session: Session, lead: Lead) -> None:
     """Recompute and persist the lead's score from current facts."""
     settings = get_settings()
     aggregates = repo.scoring_facts_for(session, lead.id)
-    field_keys = repo.field_definition_keys(session)
+    field_keys = repo.qualifying_field_keys(session)
     filled = sum(1 for k in field_keys if (lead.fields or {}).get(k) not in (None, "", []))
 
     facts = scoring.ScoringFacts(

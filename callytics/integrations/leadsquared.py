@@ -38,6 +38,7 @@ from ..contracts.vocabulary import (
     REVENUE_STAGES,
 )
 from ..util import normalize_phone
+from . import lsq_values
 
 # --- field mapping --------------------------------------------------------
 
@@ -126,20 +127,42 @@ DROPPED_FIELDS: frozenset[str] = frozenset(
 )
 
 
+#: Option lists for the Select fields, read from production data rather than
+#: from the configuration screen — several configured options are never used,
+#: and several used values were never configured.
+FIELD_OPTIONS: dict[str, tuple[str, ...]] = {
+    "district": lsq_values.DISTRICTS,
+    "course_category": lsq_values.COURSE_CATEGORIES,
+    "vertical": lsq_values.VERTICALS,
+    "courses": lsq_values.COURSES,
+    "detected_course": lsq_values.COURSES,
+}
+
+
 def field_definition_rows() -> list[dict[str, Any]]:
-    """Seed rows for ``field_definitions``, preserving legacy schema names."""
-    return [
-        {
-            "key": key,
-            "label": label,
-            "data_type": data_type,
-            "legacy_schema_name": legacy,
-            "position": index,
-            "is_active": True,
-            "is_pii": key in {"city", "state", "lead_note"},
-        }
-        for index, (key, (label, data_type, legacy)) in enumerate(CUSTOM_FIELD_MAP.items())
-    ]
+    """Seed rows for ``field_definitions``, preserving legacy schema names.
+
+    Fields measured as almost never populated are seeded inactive. Carrying
+    them keeps the mapping traceable; leaving them active would put dead
+    columns in front of counsellors and feed empty values into scoring.
+    """
+    rows = []
+    for index, (key, (label, data_type, legacy)) in enumerate(CUSTOM_FIELD_MAP.items()):
+        population = lsq_values.OBSERVED_POPULATION.get(key)
+        reliable = population is None or population >= lsq_values.UNRELIABLE_BELOW
+        rows.append(
+            {
+                "key": key,
+                "label": label,
+                "data_type": data_type,
+                "options": list(FIELD_OPTIONS[key]) if key in FIELD_OPTIONS else None,
+                "legacy_schema_name": legacy,
+                "position": index,
+                "is_active": reliable,
+                "is_pii": key in {"city", "state", "lead_note"},
+            }
+        )
+    return rows
 
 
 def stage_rows() -> list[dict[str, Any]]:
@@ -237,9 +260,28 @@ def to_lead_create(record: dict[str, Any], stats: ImportStats | None = None) -> 
         source = "Select Source"
 
     fields: dict[str, Any] = {}
-    for key, (_label, _type, legacy) in CUSTOM_FIELD_MAP.items():
-        value = record.get(legacy)
-        if value not in (None, "", []):
+    for key, (_label, data_type, legacy) in CUSTOM_FIELD_MAP.items():
+        raw = record.get(legacy)
+        # Placeholders ("Select Area", "NA", "other_courses") are the absence
+        # of an answer, not an answer. Importing them verbatim would create
+        # real-looking segments that mean nothing — in a 6-week sample,
+        # "Select Area" was the most common district value in the account.
+        value = lsq_values.clean(raw)
+        if value is None:
+            continue
+        if key == "courses" or data_type == "multiselect":
+            parsed = lsq_values.parse_courses(value)
+            if not parsed:
+                continue
+            fields[key] = parsed
+            unknown = [c for c in parsed if c not in lsq_values.COURSES]
+            for name in unknown:
+                stats.issues.append(ImportIssue(prospect_id, legacy, f"course not in catalogue: {name!r}"))
+        elif key == "detected_course":
+            course = lsq_values.canonical_course(value)
+            if course:
+                fields[key] = course
+        else:
             fields[key] = value
 
     consent = Consent(

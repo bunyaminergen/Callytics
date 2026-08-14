@@ -19,10 +19,13 @@ Both are competent lead databases. Neither closes the loop between *what was
 said on a call* and *what the pipeline says* — and that gap is where the
 revenue leaks.
 
-The design brief came out of two places: the live LeadSquared account (read
-directly — 117 lead fields, 18 stages, 51 sources, 43 users across 9 teams) and
-a recorded Meritto sales demo. The demo is worth quoting, because it named the
-core problem out loud. Asked whether the AI would update a lead's stage after
+The design brief came out of two places: the live LeadSquared account — read
+directly, both its configuration (117 lead fields, 18 stages, 51 sources, 43
+users across 9 teams) and its **actual data**, which turned out to disagree
+with the configuration in expensive ways (see
+[`04-migration.md`](docs/design/04-migration.md)) — and a recorded Meritto
+sales demo. The demo is worth quoting, because it named the core problem out
+loud. Asked whether the AI would update a lead's stage after
 reading a call, the vendor's engineer said they had built it but advised
 against turning it on: *"doing that, we will never have that trust."*
 
@@ -123,6 +126,13 @@ built around it:
 
 - **Verbatim values.** Stages and sources import as-is, so a migrated lead
   reads identically in both systems and existing reports still mean something.
+- **But junk is not data.** Dropdown defaults are nulled on import —
+  `Select Area` was the single most common "district" in the account (188
+  leads in a 6-week sample). Course names are canonicalised, because
+  `SAP S4/HANA FI` and `sap_s/4hana_fi` are one course and LeadSquared's own
+  duplicate finder does not catch it. Fields measured as near-always empty
+  (`mx_Vertical`, 3% populated) are seeded inactive rather than shown to
+  counsellors.
 - **No field loss.** ~15 hot fields become indexed columns; the rest become
   `field_definitions` rows that retain their original `mx_` schema name.
   Dropped fields are an explicit, tested list — not an accident.
