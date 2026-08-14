@@ -1,8 +1,13 @@
-# Directory
-.idea
-.temp
-.agile
-.data/input
-
-# Extension
-*.env
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+*.sqlite3
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+dist/
+build/
+*.egg-info/
+.DS_Store

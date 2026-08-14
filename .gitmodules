@@ -1,0 +1,3 @@
+[submodule "vendor/finecho"]
+	path = vendor/finecho
+	url = https://github.com/jesu-devs/FinEcho.git

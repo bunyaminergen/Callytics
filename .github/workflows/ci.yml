@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: false   # FinEcho is not needed to run the test suite
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        run: uv pip install --system -e '.[dev,api]'
+
+      - name: Lint
+        run: ruff check callytics tests
+
+      - name: Test
+        run: pytest tests/ -q
+
+      - name: Migration applies from scratch
+        env:
+          CALLYTICS_MYSQL_DSN: sqlite:///ci-check.sqlite3
+        run: alembic upgrade head

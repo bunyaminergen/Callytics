@@ -1,2 +1,0 @@
-SELECT ID, Name
-FROM Topic;

@@ -1,0 +1,55 @@
+"""Persistence layer: models, session management, seed data."""
+
+from __future__ import annotations
+
+from .models import (
+    Activity,
+    Appointment,
+    AudienceSegmentRow,
+    AuditLog,
+    Base,
+    CallIntelligenceRow,
+    EngagementProfileRow,
+    FieldDefinition,
+    Lead,
+    LeadIdentifier,
+    LeadSource,
+    LeadStage,
+    Notification,
+    ProcessedEvent,
+    Proposal,
+    SavedView,
+    ScoreSnapshot,
+    Task,
+    Team,
+    TeamMember,
+    User,
+)
+from .session import get_engine, get_sessionmaker, session_scope
+
+__all__ = [
+    "Activity",
+    "Appointment",
+    "AudienceSegmentRow",
+    "AuditLog",
+    "Base",
+    "CallIntelligenceRow",
+    "EngagementProfileRow",
+    "FieldDefinition",
+    "Lead",
+    "LeadIdentifier",
+    "LeadSource",
+    "LeadStage",
+    "Notification",
+    "ProcessedEvent",
+    "Proposal",
+    "SavedView",
+    "ScoreSnapshot",
+    "Task",
+    "Team",
+    "TeamMember",
+    "User",
+    "get_engine",
+    "get_sessionmaker",
+    "session_scope",
+]
